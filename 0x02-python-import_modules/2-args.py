@@ -2,7 +2,6 @@
 
 if __name__ == "__main__":
     from sys import argv
-    
     j = len(argv)
 
     if j == 1:
