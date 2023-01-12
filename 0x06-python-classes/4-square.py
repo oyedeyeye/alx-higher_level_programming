@@ -40,7 +40,7 @@ class Square:
         Setter
 
         Args:
-            val: sets size to val, if it is type int
+            value: sets size to val, if it is type int
                 and >= 0
         """
         if type(value) is not int:
