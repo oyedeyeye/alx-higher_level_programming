@@ -15,7 +15,7 @@ class Square:
     class square definition
     Args:
         size (int): length of the side of a square
-        position (int): tuple of 2 positive integers
+        position (int, int): tuple of 2 positive integers
     """
 
     def __init__(self, size=0, position=(0, 0)):
@@ -97,7 +97,8 @@ class Square:
         """
         if self.__size == 0:
             print("")
-        else:
-            for i in range(self.__size):
-                print("\n" * self.__position[1], end='')
-                print(' ' * self.__position[0] + '#' * self.__size)
+            return
+
+        [print("") for i in range(0, self.__position[1])]
+        for i in range(self.__size):            
+            print(' ' * self.__position[0] + '#' * self.__size)
