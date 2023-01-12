@@ -35,7 +35,7 @@ class Square:
         return self.__size
 
     @size.setter
-    def size(self, val):
+    def size(self, value):
         """
         Setter
 
@@ -43,12 +43,12 @@ class Square:
             val: sets size to val, if it is type int
                 and >= 0
         """
-        if type(val) is not int:
+        if type(value) is not int:
             raise TypeError("size must be an integer")
-        elif val < 0:
+        elif value < 0:
             raise ValueError("size must be >=0")
         else:
-            self.__size = val
+            self.__size = value
 
     def area(self):
         """
