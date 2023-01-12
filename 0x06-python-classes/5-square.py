@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-MOdule 4-square
+MOdule 5-square
 Define class square with private instance attribute size,
 validate size and define a public instance method for computing
 the area of the square. Can access and update size
