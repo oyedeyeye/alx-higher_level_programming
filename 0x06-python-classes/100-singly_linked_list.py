@@ -81,7 +81,7 @@ class SinglyLinkedList:
 
     def sorted_insert(self, value):
         """
-        Inserts a node into and sorts the SinglyLinkedList
+        Inserts a node into the SinglyLinkedList and sorts
 
         the node is inserted at the correct ordered numerical position
 
