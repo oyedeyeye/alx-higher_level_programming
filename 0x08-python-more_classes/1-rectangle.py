@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """
 module 1-Rectangle
-Defines an empty class
+Defines an Rectangle class
 """
 
 
