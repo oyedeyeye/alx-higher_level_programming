@@ -92,16 +92,20 @@ class SinglyLinkedList:
         if self.__head is None:
             new.next_node = None
             self.__head = new
-        elif self.__head.data > value:
+            return
+
+        if self.__head.data >= new.data:
             new.next_node = self.__head
             self.__head = new
-        else:
-            tmp = self.__head
-            while (tmp.next_node is not None and
-                    tmp.next_node.data < value):
-                tmp = tmp.next_node
-                new.next_node = tmp.next_node
-                tmp.next_node = new
+            return
+
+        tmp = self.__head
+        while (tmp.next_node is not None and
+                tmp.next_node.data < new.data):
+            tmp = tmp.next_node
+        new.next_node = tmp.next_node
+        tmp.next_node = new
+        return
 
     def __str__(self):
         """
