@@ -95,10 +95,5 @@ class Rectangle:
         if self.__height == 0 or self.__width == 0:
             return ("")
 
-        printable = []
-        for i in range(self.__height):
-            [printable.append("#") for j in range(self.__width)]
-            if i != self.__height:
-                printable.append("\n")
-
-        return ("".join(printable))
+        printable = "\n".join(["#" * self.__width for i in range(self.__height)])
+        return printable
