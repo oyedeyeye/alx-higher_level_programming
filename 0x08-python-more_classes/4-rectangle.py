@@ -98,7 +98,7 @@ class Rectangle:
         printable = "\n".join(
                             ["#" * self.__width for i in range(self.__height)])
         return printable
-        
+
     def __repr__(self):
         """String representation to create new instance"""
         return "Rectangle({:d}, {:d})".format(self.__width, self.__height)
