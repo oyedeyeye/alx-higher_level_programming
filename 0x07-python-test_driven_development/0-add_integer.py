@@ -7,6 +7,7 @@ Args:
         a(int or float): integer or float parameter
         b(int or float): integer or float parameter defaults to 98"""
 
+
 def add_integer(a, b=98):
     """add_integer function
 
