@@ -18,8 +18,11 @@ SUCCESS CASES
     ###
     ###
 
+    >>> print_square(3)
+    #
+
     >>> print_square(0)
-    
+
  
 FAILED CASES
 ============
