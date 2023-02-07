@@ -31,6 +31,11 @@ Test with no args:
     
 Test with other types
 ::
+    >>> say_my_name("Mercy", True)
+    Traceback (most recent call last):
+    ...
+    TypeError: last_name must be a string
+
     >>> say_my_name(None, "Dayo")
     Traceback (most recent call last):
     ...
