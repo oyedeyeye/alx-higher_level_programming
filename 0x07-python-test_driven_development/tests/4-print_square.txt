@@ -43,7 +43,7 @@ FAILED CASES
     TypeError: size must be an integer
 
 Other types types:
-::
+
     >>> print_square(True)
     Traceback (most recent call last):
     ...
@@ -64,3 +64,15 @@ Other types types:
     Traceback (most recent call last):
     ...
     TypeError: size must be an integer
+
+Test extra arguments
+    >>> print_square(4, 9)
+    Traceback (most recent call last):
+    ...
+    TypeError: print_square() takes 1 positional argument but 2 were given
+
+Test with no args at all
+    >>> print_square()
+    Traceback (most recent call last):
+    ...
+    TypeError: print_square() missing 1 required positional argument: 'size'
