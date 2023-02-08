@@ -1,0 +1,12 @@
+# run test with python3 -m doctest -v ./tests/5-text_indentation.txt
+
+==================================
+Test for module 5-text_indentation.py
+==================================
+
+The module has only one method, that we will import.
+The module prints a text with 2 new lines
+after each of these characters: `.`, `?` and `:`
+
+    >>> text_indentation = __import__('5-text_indentation').text_indentation
+
