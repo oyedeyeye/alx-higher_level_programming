@@ -4,20 +4,21 @@
 import unittest
 max_integer = __import__('6-max_integer').max_integer
 
+
 class testMaxInteger(unittest.TestCase):
     """ run the test with python3 -m unittest tests.6-max_integer_test"""
 
     def setUp(self):
         """All our test variables here"""
-        self.list1 = [3, 4, 5, 7, 12] # int type
-        self.list2 = [-2, -4, -5, -7, -1] # negative int types
-        self.list3 = [-3.4, 0.5, -5.2, 0.7, -1.2] # float type
-        self.list4 = [10, -10, 10] # equal number
-        self.list5 = [{1, 9}, {2}, {3}] # list of other types
-        self.list6 = [0] # single element list
-        self.str1 = "837629" # strings
+        self.list1 = [3, 4, 5, 7, 12]  # int type
+        self.list2 = [-2, -4, -5, -7, -1]  # negative int types
+        self.list3 = [-3.4, 0.5, -5.2, 0.7, -1.2]  # float type
+        self.list4 = [10, -10, 10]  # equal number
+        self.list5 = [{1, 9}, {2}, {3}]  # list of other types
+        self.list6 = [0]  # single element list
+        self.str1 = "837629"  # strings
         self.str2 = "mnoadjx"
-        self.str3 = ['a', 'b', 'c', 't', 'n', 'z'] # list of letters
+        self.str3 = ['a', 'b', 'c', 't', 'n', 'z']  # list of letters
         self.str4 = ["abc", "y"]
         # List of list
         self.list7 = [[1, 3], [2, 3], [1, 4], [2, 5]]
@@ -69,6 +70,7 @@ class testMaxInteger(unittest.TestCase):
         self.assertIsNone(max_integer(self.others5), None)
         self.assertIsNone(max_integer(), None)
         self.assertIsNone(max_integer(self.others6), None)
+
 
 if __name__ == '__main__':
     unittest.main()
