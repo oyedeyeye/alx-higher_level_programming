@@ -52,11 +52,10 @@ SUCCESS CASES
     Yes, or No
 
     >>> text_indentation("        ")
-    <BLANKLINE>
+
     >>> text_indentation("  Come   \n   .      ")
     Come
     .
-    <BLANKLINE>
     <BLANKLINE>
 
 FAILED CASES
