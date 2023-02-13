@@ -12,9 +12,9 @@ def matrix_mul(m_a, m_b):
     if not isinstance(m_b, list):
         raise TypeError("m_b must be a list")
 
-    if m_a == [] or m_a == [[]] or len(m_a) == None:
+    if m_a == [] or m_a == [[]] or len(m_a) is None:
         raise ValueError("m_a can't be empty")
-    if m_b == [] or m_b == [[]] or len(m_b) == None:
+    if m_b == [] or m_b == [[]] or len(m_b) is None:
         raise ValueError("m_b can't be empty")
 
     len_inner_a = len(m_a[0])
@@ -23,7 +23,7 @@ def matrix_mul(m_a, m_b):
             raise TypeError("m_a must be a list of lists")
         if len(inner_list_a) != len_inner_a:
             raise TypeError("each row of m_a must be of the same size")
-        for elem_a of inner_list_a:
+        for elem_a in inner_list_a:
             if not isinstance(elem_a, (int, float)):
                 raise TypeError("m_a should contain only integers or floats")
 
@@ -33,7 +33,7 @@ def matrix_mul(m_a, m_b):
             raise TypeError("m_b must be a list of lists")
         if len(inner_list_b) != len_inner_b:
             raise TypeError("each row of m_b must be of the same size")
-        for elem_b of inner_list_b:
+        for elem_b in inner_list_b:
             if not isinstance(elem_b, (int, float)):
                 raise TypeError("m_b should contain only integers or floats")
 
@@ -47,5 +47,5 @@ def matrix_mul(m_a, m_b):
             inner_elem.append(n)
             n = 0
         new_matrix.append(inner_elem)
-    return
 
+    return new_matrix
