@@ -1,0 +1,97 @@
+# run test with python3 -m doctest -v ./tests/100-matrix_mul.txt
+
+==================================
+Test for module 100-matrix_mul.py
+==================================
+
+The module has only one method, that we will import.
+The module computes matrix multiplication dynamically
+::
+    >>> matrix_mul = __import__('100-matrix_mul').matrix_mul
+
+SUCCESS CASES
+==============
+::
+    >>> m_a = [[1, 2], [3, 4]]
+    >>> m_b = [[1, 2], [3, 4]]
+    >>> print(matrix_mul(m_a, m_b))
+    [[7, 10], [15, 22]]
+
+    >>> m_a = [[1, 2]]
+    >>> m_b = [[3, 4], [5, 6]]
+    >>> print(matrix_mul(m_a, m_b))
+    [[13, 16]]
+ 
+    >>> m_a = [[-1, -2], [3, -4.2]]
+    >>> m_b = [[1.0, -2.0], [-3, 4]]
+    >>> print(matrix_mul(m_a, m_b))
+    [[5.0, -6.0], [15.600000000000001, -22.8]]
+
+    >>> m_a = [[1, 2, 5], [3, 2, 3]]
+    >>> m_b = [[1, 3, 5, 2], [2, 1, 3, 4], [7, 3, 1, 1]]
+    >>> print(matrix_mul(m_a, m_b))
+    [[40, 20, 16, 15], [28, 20, 24, 17]]
+
+
+
+FAILED CASES
+============
+::
+
+    >>> m_a = [[]]
+    >>> m_b = [[3, 4], [5, 6]]
+    >>> print(matrix_mul(m_a, m_b))
+    Traceback (most recent call last):
+    ...
+    ValueError: m_a can't be empty
+
+
+    >>> m_a = [[1.0, 2.0], [2, 3]]
+    >>> m_b = []
+    >>> print(matrix_mul(m_a, m_b))
+    Traceback (most recent call last):
+    ...
+    ValueError: m_b can't be empty
+
+
+Test with columns in m_a not matching rows in m_b
+
+    >>> m_a = [[1, 2], [1, 2]]
+    >>> m_b = [[3, 4], [5, 6], [7, 8]]
+    >>> print(matrix_mul(m_a, m_b))
+    Traceback (most recent call last):
+    ...
+    ValueError: m_a and m_b can't be multiplied
+
+
+Different sized lists
+    >>> m_a = [[1, 2], [1, 2]]
+    >>> m_b =  [[1, 2], [1, 2, 3, 4]]
+    >>> print(matrix_mul(m_a, m_b))
+    Traceback (most recent call last):
+    ...
+    TypeError: each row of m_b must be of the same size
+
+    >>> m_a =  [[1, 2], [1, 2, 3, 4]]
+    >>> m_b = [[1, 2], [1, 2]]
+    >>> print(matrix_mul(m_a, m_b))
+    Traceback (most recent call last):
+    ...
+    TypeError: each row of m_a must be of the same size
+
+
+Other data types
+::
+    >>> m_a =  [["hey"], ["you"]]
+    >>> m_a =  [["Holberton"], ["school"]]
+    >>> print(matrix_mul(m_a, m_b))
+    Traceback (most recent call last):
+    ...
+    ValueError: m_a and m_b can't be multiplied
+
+    >>> m_a =  [(1, 3)]
+    >>> m_b = [[1, 2], [1, 2]]
+    >>> print(matrix_mul(m_a, m_b))
+    Traceback (most recent call last):
+    ...
+    TypeError: m_a must be a list of lists

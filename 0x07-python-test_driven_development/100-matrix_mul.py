@@ -23,6 +23,9 @@ def matrix_mul(m_a, m_b):
             raise TypeError("m_a must be a list of lists")
         if len(inner_list_a) != len_inner_a:
             raise TypeError("each row of m_a must be of the same size")
+            """Nos of cols in matrix A must be == nos of rows in matrix B"""
+        if len(inner_list_a) != len(m_b):
+            raise ValueError("m_a and m_b can't be multiplied")
         for elem_a in inner_list_a:
             if not isinstance(elem_a, (int, float)):
                 raise TypeError("m_a should contain only integers or floats")
@@ -43,7 +46,7 @@ def matrix_mul(m_a, m_b):
         n = 0
         for j in range(len(m_b[0])):  # cols in matrix m_b
             for k in range(len(m_b)):  # rows in matrix m_b
-                n += m_a[i][k] * m_b[j][k]
+                n += m_a[i][k] * m_b[k][j]
             inner_elem.append(n)
             n = 0
         new_matrix.append(inner_elem)
