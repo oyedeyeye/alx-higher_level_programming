@@ -17,28 +17,27 @@ def matrix_mul(m_a, m_b):
     if m_b == [] or m_b == [[]] or len(m_b) is None:
         raise ValueError("m_b can't be empty")
 
-    len_inner_a = len(m_a[0])
     for inner_list_a in m_a:
         if not isinstance(inner_list_a, list):
             raise TypeError("m_a must be a list of lists")
-        if len(inner_list_a) != len_inner_a:
+        if len(inner_list_a) != len(m_a[0]):
             raise TypeError("each row of m_a must be of the same size")
             """Nos of cols in matrix A must be == nos of rows in matrix B"""
-        if len(inner_list_a) != len(m_b):
-            raise ValueError("m_a and m_b can't be multiplied")
         for elem_a in inner_list_a:
             if not isinstance(elem_a, (int, float)):
                 raise TypeError("m_a should contain only integers or floats")
 
-    len_inner_b = len(m_b[0])
     for inner_list_b in m_b:
         if not isinstance(inner_list_b, list):
             raise TypeError("m_b must be a list of lists")
-        if len(inner_list_b) != len_inner_b:
+        if len(inner_list_b) != len(m_b[0]):
             raise TypeError("each row of m_b must be of the same size")
         for elem_b in inner_list_b:
             if not isinstance(elem_b, (int, float)):
                 raise TypeError("m_b should contain only integers or floats")
+
+    if len(m_a[0]) != len(m_b):
+            raise ValueError("m_a and m_b can't be multiplied")
 
     new_matrix = []
     for i in range(len(m_a)):  # rows in matrix m_a
