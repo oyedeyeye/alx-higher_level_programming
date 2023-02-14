@@ -95,3 +95,38 @@ Other data types
     Traceback (most recent call last):
     ...
     TypeError: m_a must be a list of lists
+
+    >>> m_a =  "Holberton"
+    >>> m_b = [[1, 2], [1, 2]]
+    >>> print(matrix_mul(m_a, m_b))
+    Traceback (most recent call last):
+    ...
+    TypeError: m_a must be a list
+
+    >>> m_a =  [[1, 2], [1, 2]]
+    >>> m_b = "Holberton"
+    >>> print(matrix_mul(m_a, m_b))
+    Traceback (most recent call last):
+    ...
+    TypeError: m_b must be a list
+
+    >>> m_a = [[5, 6], [7, 8]]
+    >>> m_b = [1, 2, 3, 4]
+    >>> print(matrix_mul(m_a, m_b))
+    Traceback (most recent call last):
+    ...
+    TypeError: m_b must be a list of lists
+
+
+Missing Arguments
+::
+    >>> print(matrix_mul(m_a))
+    Traceback (most recent call last):
+    ...
+    TypeError: matrix_mul() missing 1 required positional argument: 'm_b'
+
+    >>> print(matrix_mul())
+    Traceback (most recent call last):
+    ...
+    TypeError: matrix_mul() missing 2 required positional arguments: 'm_a' and 'm_b'
+

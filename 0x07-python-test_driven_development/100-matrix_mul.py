@@ -37,7 +37,7 @@ def matrix_mul(m_a, m_b):
                 raise TypeError("m_b should contain only integers or floats")
 
     if len(m_a[0]) != len(m_b):
-            raise ValueError("m_a and m_b can't be multiplied")
+        raise ValueError("m_a and m_b can't be multiplied")
 
     new_matrix = []
     for i in range(len(m_a)):  # rows in matrix m_a
