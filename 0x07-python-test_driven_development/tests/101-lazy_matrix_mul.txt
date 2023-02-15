@@ -92,26 +92,26 @@ Other data types
     ...
     ValueError: shapes (2,1) and (2,1) not aligned: 1 (dim 1) != 2 (dim 0)
 
-    >>> m_a =  {(3, 3)}
+    >>> m_a = {(3, 3)}
     >>> m_b = [[1, 2], [1, 2]]
-    >>> print(lazy_matrix_mul(m_a, m_b)) # result = [[4 8]]
+    >>> print(lazy_matrix_mul(m_a, m_b))
     Traceback (most recent call last):
     ...
-    TypeError: unsupported operand type(s) for *: 'set' and 'int'
+    TypeError: Object arrays are not currently supported
 
     >>> m_a =  "Holberton"
     >>> m_b = [[1, 2], [1, 2]]
     >>> print(lazy_matrix_mul(m_a, m_b))
     Traceback (most recent call last):
     ...
-    TypeError: ufunc 'multiply' did not contain a loop with signature matching types dtype('<U9') dtype('<U9') dtype('<U9')
+    ValueError: Scalar operands are not allowed, use '*' instead
 
     >>> m_a =  [[1, 2], [1, 2]]
     >>> m_b = "Holberton"
     >>> print(lazy_matrix_mul(m_a, m_b))
     Traceback (most recent call last):
     ...
-    TypeError: ufunc 'multiply' did not contain a loop with signature matching types dtype('<U9') dtype('<U9') dtype('<U9')
+    ValueError: Scalar operands are not allowed, use '*' instead
 
     >>> m_a = [[5, 6], [7, 8]]
     >>> m_b = [1, 2, 3, 4]
@@ -125,7 +125,7 @@ Other data types
     >>> print(lazy_matrix_mul(m_a, m_b))
     Traceback (most recent call last):
     ...
-    ValueError: data type must provide an itemsize
+    TypeError: invalid data type for einsum
 
 Missing Arguments
 ::
