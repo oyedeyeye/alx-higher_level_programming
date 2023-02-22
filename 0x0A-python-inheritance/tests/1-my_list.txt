@@ -1,0 +1,79 @@
+# run test with python3 -m doctest -v ./1-my_list.txt
+
+==================================
+Test for module 1-my_list.py
+==================================
+
+The module has only one method, that we will import.
+::
+    >>> MyList = __import__('1-my_list').MyList
+
+SUCCESS CASES
+==============
+
+Module assumes all input will be type int
+::
+    >>> my_list = MyList()
+    >>> my_list.append(4)
+    >>> my_list.append(-6)
+    >>> my_list.append(-3)
+    >>> my_list.append(7)
+    >>> my_list.append(1)
+    >>> print(my_list)
+    [4, -6, -3, 7, 1]
+    >>> my_list.print_sorted()
+    [-6, -3, 1, 4, 7]
+    >>> print(my_list)
+    [4, -6, -3, 7, 1]
+
+Another instance
+    >>> another_list = MyList()
+    >>> another_list.append(40)
+    >>> another_list.append(50)
+    >>> another_list.append(-60)
+    >>> print(another_list)
+    [40, 50, -60]
+    >>> another_list.print_sorted()
+    [-60, 40, 50]
+    >>> another_list.print_sorted()
+    [-60, 40, 50]
+    >>> print(another_list)
+    [40, 50, -60]
+
+
+>>> id(another_list) is not id(another_list.print_sorted())
+[-60, 40, 50]
+True
+
+Test with single element
+    >>> single = MyList()
+    >>> single.append(-998877)
+    >>> print(single)
+    [-998877]
+    >>> single.print_sorted()
+    [-998877]
+    >>> print(single)
+    [-998877]
+
+Empty List 
+
+    >>> empty = MyList()
+    >>> print(empty)
+    []
+    >>> empty.print_sorted()
+    []
+    >>> print(empty)
+    []
+
+Test types, isinstance, and subclass
+
+    >>> type(MyList())
+    <class '1-my_list.MyList'>
+    >>> isinstance(MyList, object)
+    True
+    >>> isinstance(MyList, list)
+    False
+    >>> issubclass(MyList, list)
+    True
+    >>> 'print_sorted' in dir(MyList)
+    True
