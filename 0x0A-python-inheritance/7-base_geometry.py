@@ -15,6 +15,12 @@ class BaseGeometry:
         pass
 
     def integer_validator(self, name, value):
+        """integer validator
+
+        Args:
+            name (str): always a string
+            value (int): greater than 0
+        """
         self.name = name
         self.value = value
 
