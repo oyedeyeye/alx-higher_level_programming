@@ -12,6 +12,5 @@ def class_to_json(obj):
     Args:
         obj: a class data structure
     """
-    import json
 
-    return json.dumps(obj.__dict__, sort_keys=True)
+    return obj.__dict__
