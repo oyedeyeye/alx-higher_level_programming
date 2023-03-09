@@ -1,10 +1,10 @@
 #!/usr/bin/python3
-"""Module 9: student
+"""Module 10: student
 Class Student that defines student
 
 methods:
         def __init__(self, first_name, last_name, age)
-        def to_json(self)"""
+        def to_json(self, attrs=None)"""
 
 
 class Student:
@@ -29,7 +29,11 @@ class Student:
         self.age = age
 
     def to_json(self, attrs=None):
-        """Retrieve dictionary representation of Student instance"""
+        """Retrieve dictionary representation of Student instance
+
+        Args:
+            attrs (list): list of attributes, default to none
+        """
         if attrs is not None:
             dic = {}
             for attr in attrs:
