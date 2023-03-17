@@ -20,6 +20,10 @@ class Rectangle(Base):
         __x: positional argument, defaults to 0
         __y: positional argument, defaults to 0
         id: identity of the rectangle class
+
+    Methods:
+        def __init__(self, width, height, x=0, y=0, id=None):
+        def area(self):
     """
 
     def __init__(self, width, height, x=0, y=0, id=None):
