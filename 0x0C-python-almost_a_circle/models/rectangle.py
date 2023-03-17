@@ -19,7 +19,7 @@ class Rectangle(Base):
         __height : height of the rectangle
         __x: positional argument, defaults to 0
         __y: positional argument, defaults to 0
-        id: id of the class passed as argument to super()
+        id: identity of the rectangle class
     """
 
     def __init__(self, width, height, x=0, y=0, id=None):
@@ -42,6 +42,11 @@ class Rectangle(Base):
         Args:
             value: the value for width
         """
+        if not isinstance(value, int):
+            raise TypeError("width must be an integer")
+        if value <= 0:
+            raise ValueError("width must be > 0")
+
         self.__width = value
 
     @property
@@ -56,6 +61,11 @@ class Rectangle(Base):
         Args:
             value: the value for height
         """
+        if not isinstance(value, int):
+            raise TypeError("height must be an integer")
+        if value <= 0:
+            raise ValueError("height must be > 0")
+
         self.__height = value
 
     @property
@@ -64,12 +74,15 @@ class Rectangle(Base):
         return self.__x
 
     @x.setter
-    def x(self, value):
+    def x(self, value=0):
         """Setter for x
 
         Args:
             value: the value for x
         """
+        if value < 0:
+            raise ValueError("x must be >= 0")
+
         self.__x = value
 
     @property
@@ -78,10 +91,13 @@ class Rectangle(Base):
         return self.__y
 
     @y.setter
-    def y(self, value):
+    def y(self, value=0):
         """Setter for y
 
         Args:
             value: the value for y
         """
+        if value < 0:
+            raise ValueError("y must be >= 0")
+
         self.__y = value
