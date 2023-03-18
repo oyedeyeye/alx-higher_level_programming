@@ -119,3 +119,9 @@ class Rectangle(Base):
         """Prints Rectangle instance with character `#`"""
 
         print("\n".join(['#' * self.__width for i in range(self.__height)]))
+
+    def __str__(self):
+        """Return the printable representation of the Rectangle class"""
+        return "[{}] ({:d}) {:d}/{:d} - {:d}/{:d}".format(
+            self.__class__.__name__, self.id, self.__x, self.__y,
+            self.__width, self.__height)
