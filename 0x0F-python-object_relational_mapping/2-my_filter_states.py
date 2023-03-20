@@ -25,7 +25,7 @@ if __name__ == "__main__":
         """SELECT * FROM states WHERE name LIKE
         '{:s}' ORDER BY states.id ASC""".format(argv[4]))
     query_results = cur.fetchall()
-    [print(row) for row in query_results]
+    [print(row) for row in query_results if row[1] == argv[4]]
 
     cur.close()
     db.close()
