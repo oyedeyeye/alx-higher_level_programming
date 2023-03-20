@@ -25,16 +25,17 @@ if __name__ == "__main__":
         """SELECT cities.name
         FROM cities
         WHERE cities.state_id=
-        (SELECT id
+        (SELECT states.id
         FROM states
         WHERE name= %s)
         ORDER BY cities.id ASC""", (argv[4], ))
     query_results = cur.fetchall()
     for row in query_results:
-        if row is not query_results[-1]:
-            print("{:s}".format(row[0]), end=", ")
-        else:
-            print("{:s}".format(row[0]))
+        if row[0] == argv[4]:
+            if row is not query_results[-1]:
+                print("{:s}".format(row[0]), end=", ")
+            else:
+                print("{:s}".format(row[0]))
 
     cur.close()
     db.close()

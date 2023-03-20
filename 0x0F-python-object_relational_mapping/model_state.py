@@ -14,10 +14,11 @@ State class:
 
 
 from sqlalchemy import Column, Integer, String, ForeignKey
-from sqlalchemy.orm import declarative_base
+from sqlalchemy.ext.declarative import declarative_base
 
 # Declarative base class
 Base = declarative_base()
+
 
 # State mapping using the base
 class State(Base):
@@ -29,7 +30,7 @@ class State(Base):
         id (sqlalchemy.Integer): The state's id, a primary key
         name (sqlalchemy.String): the name of the state
     """
-    
+
     __tablename__ = "states"
     id = Column(Integer, primary_key=True)
     name = Column(String(128), nullable=False)
