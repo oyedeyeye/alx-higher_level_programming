@@ -22,7 +22,7 @@ if __name__ == "__main__":
     cur = db.cursor()
     # SQL statement execution
     cur.execute(
-        """SELECT cities.name 
+        """SELECT cities.name
         FROM cities
         WHERE cities.state_id=
         (SELECT id
