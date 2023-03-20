@@ -4,7 +4,7 @@ script that takes in an argument and displays all values in the
 states table of `hbtn_0e_0_usa` where name matches the argument.
 should take 4 arguments: `mysql username`,
                           `mysql password`,
-                          `database name` and 
+                          `database name` and
                           `state name searched` (no argument validation needed)
 """
 
@@ -21,7 +21,9 @@ if __name__ == "__main__":
 
     cur = db.cursor()
     # SQL statement execution
-    cur.execute("""SELECT * FROM states WHERE name LIKE '{:s}' ORDER BY states.id ASC""".format(argv[4]))
+    cur.execute(
+        """SELECT * FROM states WHERE name LIKE
+        '{:s}' ORDER BY states.id ASC""".format(argv[4]))
     query_results = cur.fetchall()
     [print(row) for row in query_results]
 
