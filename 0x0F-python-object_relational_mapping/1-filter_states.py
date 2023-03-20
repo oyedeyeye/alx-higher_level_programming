@@ -1,4 +1,4 @@
-^#!/usr/bin/python3
+#!/usr/bin/python3
 """Module 1: filter_states
 script that lists all states with a name
 starting with N (upper N) from the database `hbtn_0e_0_usa`
@@ -17,9 +17,10 @@ if __name__ == "__main__":
 
     cur = db.cursor()
     # SQL statement execution
-    cur.execute("""SELECT * FROM states
+    cur.execute(
+            """SELECT * FROM states
                     WHERE name LIKE 'N%'
-                    ORDER BY states.id ASC""")
+                    ORDER BY states.id ASC;""")
     query_results = cur.fetchall()
     for i in query_results:
         print(i)
