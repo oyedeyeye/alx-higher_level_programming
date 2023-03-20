@@ -20,7 +20,7 @@ if __name__ == "__main__":
     cur = db.cursor()
     # SQL statement execution
     cur.execute(
-        """SELECT cities.id, cities.name, states.name 
+        """SELECT cities.id, cities.name, states.name
         FROM cities, states
         WHERE cities.state_id=states.id
         ORDER BY cities.id ASC""")
