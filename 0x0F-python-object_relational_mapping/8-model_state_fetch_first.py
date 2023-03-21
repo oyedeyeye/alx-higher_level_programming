@@ -25,6 +25,9 @@ if __name__ == '__main__':
     session = Session(engine)
     # Read SQLAlchemy on more queryAPI
     first = session.query(State).order_by(State.id).first()
-    print("{}: {}".format(first.id, first.name))
+    if first is not None:
+        print("{}: {}".format(first.id, first.name))
+    else:
+        print("Nothing")
 
     session.close()
