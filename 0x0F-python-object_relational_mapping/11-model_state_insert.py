@@ -30,4 +30,9 @@ if __name__ == '__main__':
 
     session.add(new_state)
     session.commit()
+
+    u_state = session.query(State).filter(
+                State.name.like("%Louisiana%")).first()
+    print("{:d}".format(u_state.id))
+
     session.close()
