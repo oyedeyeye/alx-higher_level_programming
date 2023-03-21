@@ -22,20 +22,16 @@ if __name__ == "__main__":
     cur = db.cursor()
     # SQL statement execution
     cur.execute(
-        """SELECT cities.name
-        FROM cities
-        WHERE cities.state_id=
+        """SELECT cities.id, cities.state_id, cities.name, states.name 
+        FROM cities, states
+        WHERE cities.state_id =
         (SELECT states.id
         FROM states
-        WHERE name= %s)
+        WHERE states.name LIKE %s)
         ORDER BY cities.id ASC""", (argv[4], ))
     query_results = cur.fetchall()
-    for row in query_results:
-        if row[0] == argv[4]:
-            if row is not query_results[-1]:
-                print("{:s}".format(row[0]), end=", ")
-            else:
-                print("{:s}".format(row[0]))
+    # print([row for row in query_results])
+    print(", ".join([row[2] for row in query_results if row[3] == argv[4]]))
 
     cur.close()
     db.close()
