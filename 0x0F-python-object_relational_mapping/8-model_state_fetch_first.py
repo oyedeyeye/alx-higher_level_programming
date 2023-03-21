@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Module 7: model_state_fetch_all
+"""Module 8: model_state_fetch_first
 script that prints the first `State` objects from the database `hbtn_0e_6_usa`
 
 Your script should take 3 arguments: `<mysql username>`,
