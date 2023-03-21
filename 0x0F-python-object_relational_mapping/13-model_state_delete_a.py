@@ -27,8 +27,8 @@ if __name__ == '__main__':
     session = Session()
 
     # Update a DB record
-    session.query(State).filter(State.id == 2).update(
-                {"name": "New Mexico"}, synchronize_session="fetch")
+    session.query(State).filter(State.name.like("%a%")).delete(
+            synchronize_session="fetch")
     session.commit()
 
     session.close()
