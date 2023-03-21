@@ -1,11 +1,13 @@
 #!/usr/bin/python3
 """Module 10: model_state_my_get
-Prints `State` object with `name` passed as argument from database `hbtn_0e_6_usa`
+Prints `State` object with `name` passed as
+argument from database `hbtn_0e_6_usa`
 
 Your script should take 4 arguments: `<mysql username>`,
                                        `<mysql password>`
                                        `<database name>` and
-                                       `<state name to search>` (SQL injection free)
+                                       `<state name to search>`
+                                       (SQL injection free)
 You must use the module SQLAlchemy
 """
 

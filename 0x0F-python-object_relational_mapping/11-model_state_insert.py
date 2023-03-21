@@ -26,8 +26,8 @@ if __name__ == '__main__':
     session = Session()
 
     # Read SQLAlchemy Documentation on API
-    new_state = State(name = "Louisiana")
+    new_state = State(name="Louisiana")
+
     session.add(new_state)
     session.commit()
-
     session.close()

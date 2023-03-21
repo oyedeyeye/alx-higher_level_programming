@@ -24,7 +24,8 @@ if __name__ == '__main__':
 
     session = Session(engine)
     # Read SQLAlchemy on more queryAPI
-    for state in session.query(State).order_by(State.id).filter(State.name.like("%a%")).all():
+    for state in session.query(State).order_by(State.id).filter(
+                State.name.like("%a%")).all():
         print("{}: {}".format(state.id, state.name))
 
     session.close()
