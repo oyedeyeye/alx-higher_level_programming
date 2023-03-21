@@ -1,6 +1,7 @@
 #!/usr/bin/python3
-"""Module 11: model_state_insert
-script that adds the State object “Louisiana” to database `hbtn_0e_6_usa`
+"""Module 100: relationship_states_cities
+script that creates `State` “California” with `City` “San Francisco” from
+database `hbtn_0e_100_usa`
 
 Your script should take 3 arguments: `<mysql username>`,
                                        `<mysql password>` and
