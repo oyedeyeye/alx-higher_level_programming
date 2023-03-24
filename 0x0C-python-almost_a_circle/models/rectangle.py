@@ -20,11 +20,13 @@ class Rectangle(Base):
         __x: positional argument, defaults to 0
         __y: positional argument, defaults to 0
         id: identity of the rectangle class
+        *args: pass non-keyworded vaariable length argument list to function
 
     Methods:
         def __init__(self, width, height, x=0, y=0, id=None):
         def area(self):
         def display(self):
+        def update(self, *args):
         def __str__(self):
     """
 
@@ -128,6 +130,14 @@ class Rectangle(Base):
         else:
             print(
                 "\n".join(['#' * self.__width for i in range(self.__height)]))
+
+    def update(self, *args):
+        """Public method that assigns argument to each attributes"""
+        attrs = ["id", "width", "height", "x", "y"]
+        for i, arg in enumerate(args):
+            if i >= len(attrs):
+                break
+            setattr(self, attrs[i], arg)
 
     def __str__(self):
         """Return the printable representation of the Rectangle class"""
