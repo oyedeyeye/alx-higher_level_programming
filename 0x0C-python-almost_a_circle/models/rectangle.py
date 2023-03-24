@@ -25,6 +25,7 @@ class Rectangle(Base):
         def __init__(self, width, height, x=0, y=0, id=None):
         def area(self):
         def display(self):
+        def __str__(self):
     """
 
     def __init__(self, width, height, x=0, y=0, id=None):
@@ -118,7 +119,15 @@ class Rectangle(Base):
     def display(self):
         """Prints Rectangle instance with character `#`"""
 
-        print("\n".join(['#' * self.__width for i in range(self.__height)]))
+        if self.__y > 0:
+            print("{}".format('\n' * self.__y), end ='')
+        if self.__x > 0:
+            print(
+                "\n".join([((' ' * self.__x) + ('#' * self.__width)) \
+                for i in range(self.__height)]))
+        else:
+            print(
+                "\n".join(['#' * self.__width for i in range(self.__height)]))
 
     def __str__(self):
         """Return the printable representation of the Rectangle class"""
