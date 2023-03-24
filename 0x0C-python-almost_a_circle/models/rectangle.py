@@ -120,11 +120,11 @@ class Rectangle(Base):
         """Prints Rectangle instance with character `#`"""
 
         if self.__y > 0:
-            print("{}".format('\n' * self.__y), end ='')
+            print("{}".format('\n' * self.__y), end='')
         if self.__x > 0:
             print(
-                "\n".join([((' ' * self.__x) + ('#' * self.__width)) \
-                for i in range(self.__height)]))
+                "\n".join([((' ' * self.__x) + ('#' * self.__width))
+                          for i in range(self.__height)]))
         else:
             print(
                 "\n".join(['#' * self.__width for i in range(self.__height)]))
