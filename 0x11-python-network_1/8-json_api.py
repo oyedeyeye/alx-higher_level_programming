@@ -18,7 +18,11 @@ import requests
 if __name__ == '__main__':
 
     url = 'http://0.0.0.0:5000/search_user'
-    letter = "" if len(sys.argv[1]) == 1 else sys.argv[1]
+
+    if len(sys.argv[1]) == 1:
+        letter = ""
+    else:
+        letter = sys.argv[1]
 
     data = {"q": letter}
 
@@ -26,9 +30,9 @@ if __name__ == '__main__':
 
     try:
         res = req.json()
-        if res == {}:
-            print("No result")
-        else:
+        if res:
             print("[{}] {}".format(res.get("id"), res.get("name")))
+        else:
+            print("No result")
     except ValueError:
         print("Not a valid JSON")
