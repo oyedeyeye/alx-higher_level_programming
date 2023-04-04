@@ -24,9 +24,9 @@ if __name__ == '__main__':
     else:
         q = sys.argv[1]
 
-    data = {"q": q}
+    param = {"q": q}
 
-    req = requests.post(url, data=data)
+    req = requests.post(url, data=param)
 
     try:
         res = req.json()
