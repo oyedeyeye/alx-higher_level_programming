@@ -18,12 +18,12 @@ if __name__ == '__main__':
     password = sys.argv[2]
     basic = HTTPBasicAuth(username, password)
 
-    url = 'https://api.github.com/users'
+    url = 'https://api.github.com/user'
 
     req = requests.get(url, auth=basic)
-    result = req.json()
 
-    if result.get('authenticated') == True:
-        print(result.get('id'))
-    else:
+    try:
+        result = req.json()
+        print(result['id'])
+    except:
         print("None")
