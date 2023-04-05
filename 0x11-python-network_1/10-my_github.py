@@ -22,8 +22,8 @@ if __name__ == '__main__':
 
     req = requests.get(url, auth=basic)
 
-    try:
+    if bool(req) is not False:
         result = req.json()
         print(result['id'])
-    except TypeError:
+    else:
         print("None")
