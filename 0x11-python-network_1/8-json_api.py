@@ -19,7 +19,7 @@ if __name__ == '__main__':
 
     url = 'http://0.0.0.0:5000/search_user'
 
-    if len(sys.argv[1]) == 1:
+    if len(sys.argv) == 1:
         q = ""
     else:
         q = sys.argv[1]
