@@ -24,15 +24,15 @@ if __name__ == '__main__':
     else:
         q = sys.argv[1]
 
-    param = {"q": q}
+    payload = {"q": q}
 
-    req = requests.post(url, data=param)
+    req = requests.post(url, data=payload)
 
     try:
         res = req.json()
-        if res:
-            print("[{}] {}".format(res.get("id"), res.get("name")))
-        else:
+        if bool(res) is False:
             print("No result")
+        else:
+            print("[{}] {}".format(res.get("id"), res.get("name")))
     except ValueError:
         print("Not a valid JSON")
