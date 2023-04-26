@@ -9,19 +9,20 @@
 const fs = require('fs');
 
 fs.writeFile(
-  process.argv[2],
-  process.argv[3],
-  {
-    encoding: 'utf-8',
-    flag: 'w'
-  },
-  err => {
-    if (err) {
-      console.error(`{ Error: ${err.message},
+	process.argv[2],
+	process.argv[3],
+	{
+		encoding: 'utf-8',
+		flag: 'w',
+	},
+	err => {
+		if (err) {
+			console.error(`{ Error: ${err.message},
       errno: ${err.errno},
       code: '${err.code}',
       syscall: '${err.syscall}',
       path: '${err.path}' }`);
-    }
-  }
+			return;
+		}
+	}
 );
