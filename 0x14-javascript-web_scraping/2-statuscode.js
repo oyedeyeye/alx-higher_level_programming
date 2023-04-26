@@ -8,10 +8,6 @@
 const request = require('request');
 const urlArg = process.argv[2];
 
-request(urlArg, (error, response) => {
-	if (error) {
-		console.error(error);
-		throw error;
-	}
-	console.log('code: ', response && response.statusCode);
+request.get(urlArg).on('response', response => {
+	console.log('code: ', response.statusCode);
 });
